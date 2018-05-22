@@ -189,6 +189,14 @@ define([
             that._nbconvert('html', false);
         });
 
+        this.element.find('#document_details').click(function () {
+            dialog.modal({
+                title: i18n.msg._('Document Details'),
+                body: body,
+                buttons: {'OK': {}}
+            });
+        });
+
         this.element.find('#download_menu li').click(function (ev) {
             that._nbconvert(ev.target.parentElement.getAttribute('id').substring(9), true);
         });
